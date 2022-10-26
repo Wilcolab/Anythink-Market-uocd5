@@ -10,16 +10,20 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 
 ## First setup
 
-### Clone the repo
+**[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
 
-`git clone git@github.com:ObelusFamily/Anythink-Market-uocd5.git`
+First thing’s first - install Docker.
+You can verify docker is ready by running the following commands in your terminal: docker -v and docker-compose -v.
+Then, run docker-compose up from the project root directory to load Anythink's backend and frontend.
 
-### Docker
+If Docker is working correctly, the backend should be running and able to connect to your local database.
+Test this by pointing your browser to http://localhost:3000/api/ping
 
-Install and run docker, then run the following command:
+Once the backend is up and running.
+Then, it’s time to check the frontend and make sure it’s connected to the backend.
 
-`docker compose up`
+If everything is working properly, you’ll be able to create a new user on http://localhost:3001/register
+Create one (choose a cool nickname and everything) and you’ll be able to move to the next task.
 
-Check backend is running at http://localhost:3000/api/ping
-
-Check frontend is running at http://localhost:3001/register and register a new user.
+Once you’re done with this dib.
+Just make sure that you run all scripts in the next quests on one of the containers created by docker-compose up. Also, you can use docker exec to run commands on a running container.
