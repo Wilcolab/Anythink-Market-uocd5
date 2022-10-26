@@ -103,6 +103,7 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
     async def filter_items(  # noqa: WPS211
         self,
         *,
+        title: Optional[str] = None,
         tag: Optional[str] = None,
         seller: Optional[str] = None,
         favorited: Optional[str] = None,
@@ -194,6 +195,15 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
                         users.id,
                     )
                 ),
+            )
+            # fmt: on
+        if title:
+            query_params.append(f"%{title}%")
+            query_params_count += 1
+
+            # fmt: off
+            query = query.where(
+                items.title.ilike(Parameter(query_params_count)),
             )
             # fmt: on
 
