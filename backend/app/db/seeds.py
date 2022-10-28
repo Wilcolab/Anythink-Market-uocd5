@@ -3,8 +3,11 @@ from sqlalchemy.orm import sessionmaker
 
 import os
 import sys
+from pathlib import Path
 
-print(os.getcwd())
+# print(os.getcwd())
+
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -45,7 +48,7 @@ async def test():
     conn = await asyncpg.connect(DATABASE_URL)
 
     # Add 100 users
-    for number in range(100):
+    for number in range(200,300):
     # user = await UsersRepository(conn).get_user_by_username(username="test199")
         user = await UsersRepository(conn).create_user(username=f"username-{number}", email=f"mail-{number}@gmail.com", password="test")
         # user = await UsersRepository(conn).get_user_by_username(username="test199")
@@ -53,6 +56,6 @@ async def test():
         comment = await CommentsRepository(conn).create_comment_for_item(item=item, body="auto-comment", user=user)
         # print(user)
 
-# asyncio.run(test())
+asyncio.run(test())
 
 print('Please fill the seeds file')
