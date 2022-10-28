@@ -34,7 +34,7 @@ import asyncio
 
 # DATABASE_URL="postgresql://postgres:@postgres-python:5432/anythink-market"
 # db = create_engine(DATABASE_URL)
-db = create_engine(os.getenv('DATABASE_URL'))
+db = create_engine(os.environ['DATABASE_URL'])
 
 
 
