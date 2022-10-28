@@ -4,11 +4,11 @@ from sqlalchemy.orm import sessionmaker
 import os
 import sys
 
-# print(os.getcwd())
+print(os.getcwd())
 
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-sys.path.append(os.getcwd())
+# sys.path.append("/usr/src/backend/")
 
 from app.db.errors import EntityDoesNotExist
 from app.db.queries.queries import queries
@@ -53,6 +53,6 @@ async def test():
         comment = await CommentsRepository(conn).create_comment_for_item(item=item, body="auto-comment", user=user)
         # print(user)
 
-asyncio.run(test())
+# asyncio.run(test())
 
 print('Please fill the seeds file')
