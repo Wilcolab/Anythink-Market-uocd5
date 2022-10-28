@@ -48,7 +48,7 @@ Session = sessionmaker(db)
 session = Session()
 
 async def test():
-    conn = await asyncpg.connect(DATABASE_URL)
+    conn = await asyncpg.connect(os.environ['DATABASE_URL'])
 
     # Add 100 users
     for number in range(200,300):
