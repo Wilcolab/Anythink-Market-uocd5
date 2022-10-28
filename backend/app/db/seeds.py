@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 
+print(os.environ)
+
 # print(os.getcwd())
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
