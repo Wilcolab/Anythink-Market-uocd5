@@ -4,7 +4,11 @@ from sqlalchemy.orm import sessionmaker
 import os
 import sys
 
-sys.path.append("/usr/src/backend/")
+# print(os.getcwd())
+
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+sys.path.append(os.getcwd())
 
 from app.db.errors import EntityDoesNotExist
 from app.db.queries.queries import queries
