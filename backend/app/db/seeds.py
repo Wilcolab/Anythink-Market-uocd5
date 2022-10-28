@@ -1,6 +1,11 @@
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
+import os
+import sys
+
+sys.path.append("/usr/src/backend/")
+
 from app.db.errors import EntityDoesNotExist
 from app.db.queries.queries import queries
 from app.db.repositories.base import BaseRepository
@@ -9,6 +14,8 @@ from app.db.repositories.users import UsersRepository
 from app.db.repositories.items import ItemsRepository
 from app.db.repositories.comments import CommentsRepository
 from app.models.domain.profiles import Profile
+
+
 import asyncpg
 
 import asyncio
