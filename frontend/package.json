@@ -1,9 +1,6 @@
 {
   "name": "anythink-market-front",
   "version": "0.1.0",
-  "engines": {
-    "node": "^16"
-  },
   "private": true,
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
